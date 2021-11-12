@@ -1,7 +1,6 @@
 import {Component} from "react";
-import TextAreaComponent from "./TextAreaComponent";
 
-class FormComponent extends Component {
+class MonoDecryptComponent extends Component {
 
     state = {
         list: [],
@@ -50,22 +49,19 @@ class FormComponent extends Component {
     };
     render() {
         const {list, isLoaded, text, decryptedText} = this.state;
-        const size= "3px"
         if(!isLoaded){
             return 'Ladowanie';
         }
         return (
             <>
+                <h1>Rozszyfrowanie monoalfabetyczne </h1>
                 <div style={{position: "absolute",
                     left: "25px"}}>
-                    <h4>Orginal</h4>
-                    <textarea style={{width: "600px", height:"500px"}} value={text}></textarea>
-                    <h4>Result</h4>
+                    <h4>TEXT</h4>
                     <textarea style={{width: "600px", height:"500px", left: "800px"}} value={decryptedText}></textarea>
-
                         <form onChange={(e) =>  this.handleChange(e)}>
                         {list.map(value =>
-                            <input type="text" maxLength="1" placeholder={value}  style={{width: "30px"}}></input>)}
+                            <input type="text" id={value} maxLength="1" placeholder={value}  style={{width: "30px"}}></input>)}
                         </form>
 
                 </div>
@@ -77,4 +73,4 @@ class FormComponent extends Component {
 
 }
 
-export default FormComponent;
+export default MonoDecryptComponent;
