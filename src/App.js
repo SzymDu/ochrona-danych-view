@@ -1,13 +1,9 @@
 import './App.css';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from "react-router-dom";
+import {BrowserRouter as Router, Link, Route, Switch} from "react-router-dom";
 import MonoDecryptComponent from "./Components/MonoDecryptComponent";
-import NavigationComponent from "./Components/NavigationComponent";
 import CezarComponent from "./Components/CezarComponent";
+import VigenereComponent from "./Components/VigenereComponent";
+import PlayfairComponent from "./Components/PlayfairComponent";
 
 
 function App() {
@@ -22,10 +18,12 @@ function App() {
                         <Link to="/zad3">Zad3</Link>
                     </li>
                     <li>
-                        <Link to="/dashboard">Dashboard</Link>
+                        <Link to="/zad4">Zad4</Link>
+                    </li>
+                    <li>
+                        <Link to="/zad5">Zad5</Link>
                     </li>
                 </ul>
-
                 <hr/>
                 <Switch>
                     <Route exact path="/zad1">
@@ -34,8 +32,11 @@ function App() {
                     <Route path="/zad3">
                         <CezarComponent/>
                     </Route>
-                    <Route path="/dashboard">
-                        {/*<Dashboard/>*/}
+                    <Route path="/zad4">
+                       <VigenereComponent/>
+                    </Route>
+                    <Route path="/zad5">
+                        <PlayfairComponent/>
                     </Route>
                 </Switch>
             </div>
